@@ -1,12 +1,11 @@
+require 'pry'
 # Add your code here
 class Dog
     @@all = []
-    @@names = []
 
     def initialize(name)
         self.save
         @name = name
-        @@names << name
     end
 
     def save
@@ -25,11 +24,9 @@ class Dog
     end
 
     def self.print_all
-        @@names.uniq.each do |name| 
-        if name != "Snoopy" 
-            puts name 
+        @@all.uniq.each do |dog_inst| 
+            puts dog_inst.name 
         end
-    end
     end
 
 end
