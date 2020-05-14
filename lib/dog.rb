@@ -1,8 +1,12 @@
 class Dog
+
+    attr_accessor :name, :save
+
     @@all = []
-    # attr_accessor :save
+
     def initialize (name)
-        @@all << self
+        @name = name
+        save
     end
     def self.all
         @@all
@@ -11,10 +15,9 @@ class Dog
         @@all.clear
     end
     def self.print_all
-       @@all = @@all << name
-       puts @@all
+         puts self.all.map {|dog| dog.name}
     end
-    # def save
-    #     @@all << name
-    # end
+    def save
+        @@all << self
+    end
 end
